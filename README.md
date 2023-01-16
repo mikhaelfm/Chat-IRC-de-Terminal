@@ -23,7 +23,7 @@ PART {nome} : sairá do canal
 LIST : listará todos os canais disponíveis separado por espaço 
 
 
-PRIVMSG {nome1}, {nome2}, ... : <msg> : enviará uma mensagem privada para os nomes informados, se for um usuário,
+PRIVMSG {nome1}, {nome2}, ... : {msg} : enviará uma mensagem privada para os nomes informados, se for um usuário,
 ele irá receber a mensagem privada. Caso o nome for um canal, a mensagem será enviada no canal (mesmo o usuário não sendo do canal)
 
 

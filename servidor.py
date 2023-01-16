@@ -14,7 +14,6 @@ class Canal:
 
 canais =[]
 membros_atuais = []
-comandos_n_implementados = ['MODE', 'TOPIC', 'NAMES', 'INVITE', 'KICK', 'VERSION', 'STATS', 'LINKS', 'TIME', 'CONNECT', 'TRACE', 'ADMIN', 'INFO', 'NOTICE', 'WHOIS', 'WHOWAS', 'KILL', 'PING', 'PONG', 'ERROR']
 
 class Usuario:
     def __init__(self, sock , endereco):
@@ -109,9 +108,6 @@ def lidar_com_usuario(usuario):
             except Exception:
                 pass
 
-        elif (msg == 'USER'):
-            NotImplemented
-
         elif (msg == 'QUIT'):
             usuario.send('')
             del_usuario(usuario)
@@ -128,9 +124,7 @@ def lidar_com_usuario(usuario):
                             usuario.enviar_canal(bcolors.WARNING + usuario.nome + ' entrou do chat' + bcolors.RESET)
 
                         elif usuario.canal == canal:
-                            usuario.enviar_canal(bcolors.FAIL + usuario.nome + ' saiu do chat' + bcolors.RESET)
-                            usuario.canal = None
-                            canal.membros.remove(usuario)
+                            usuario.send('Você já está no canal ' + msg[5:])
 
                         else:
                             usuario.enviar_canal(bcolors.FAIL + usuario.nome + ' saiu do chat' + bcolors.RESET)
@@ -222,8 +216,6 @@ def lidar_com_usuario(usuario):
                             usuario.send('O Usúario ' + membro.nome + ' está online no canal ' + membro.canal.nome + '.')
                 if not achou:
                     usuario.send('Nome não encontrado.')
-        elif (msg.split(' ')[0] in comandos_n_implementados):
-            usuario.send('ERR UNKNOWNCOMMAND')
         else:
             if (usuario.canal != None):
                 usuario.send('{:>80}'.format(msg))

@@ -45,7 +45,7 @@ class Usuario:
                 self.nome = nome
             else:
                 self.send('Seu novo nome de usuário é ' + nome + '.')
-                self.enviar_canal(self.nome + 'mudou seu nome para' + nome + '.')
+                self.enviar_canal(self.nome + ' mudou seu nome para ' + nome + '.')
                 self.nome = nome
 
     def mudar_nome(self, nome):

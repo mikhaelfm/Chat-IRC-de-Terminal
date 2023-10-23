@@ -2,7 +2,7 @@
 
 Projeto de redes de computadores na qual foi implementado um chat usando pyhton
 Foi feito um bate papo na internet se baseando no protocolo Internet Relay Chat (IRC),
-mas aqui foi utilizado apenas um servidor local que não pode se conectar com outros canais.
+mas aqui foi utilizado apenas um servidor de lan que não pode se conectar com outros canais.
 Quando o usuário entrar no servidor será pedido seu nick e seu nome real.
 
 
@@ -28,3 +28,6 @@ ele irá receber a mensagem privada. Caso o nome for um canal, a mensagem será 
 
 
 WHO {nome}: se o nome for um usuário será informado o canal que o nome está. Caso o nome for um canal será informado todos presente nesse canal
+
+
+Para executar basta colocar seu ipv4 no host tanto no servidor quanto no cliente, depois basta executar o servidor e depois os cliente (usuários)
